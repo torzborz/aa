@@ -1,17 +1,16 @@
 <template>
-  <Layout :show-logo="false">
-    <!-- Author intro -->
-    <author-card :show-title="true" />
+  <Layout>
 
-    <!-- List posts -->
-    <div class="posts">
-      <post-card
-        v-for="edge in $page.posts.edges"
-        :key="edge.node.id"
-        :post="edge.node"
-        :metadata="$page.metadata"
-      />
-    </div>
+    <ul>
+      <li v-for="edge in $page.posts.edges" :key="edge.node.id">
+        <g-link :to="edge.node.path" v-slot="{ href, route, navigate }">
+          <a :href="href" @click="navigate" @mouseover="$emit('changePicture', edge.node)">
+            {{ edge.node.title }}
+          </a>
+        </g-link>
+      </li>
+    </ul>
+
   </Layout>
 </template>
 
@@ -23,7 +22,7 @@
       dataset
     }
   }
-  posts: allSanityPost(sortBy: "publishedAt") {
+  posts: allSanityProject(sortBy: "publishedAt") {
     edges {
       node {
         id
@@ -65,16 +64,9 @@
 </page-query>
 
 <script>
-import AuthorCard from '~/components/AuthorCard'
-import PostCard from '~/components/PostCard'
-
 export default {
-  components: {
-    AuthorCard,
-    PostCard
-  },
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'Hi!'
   }
 }
 </script>

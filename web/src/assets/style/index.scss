@@ -1,7 +1,5 @@
-@import 'reset';
-@import 'variables';
-@import 'typography';
-@import 'base';
-@import 'code';
-@import 'content-box';
-@import 'utils';
+body {
+    background-color: #dfdfdf;
+    color: #707070;
+    font-family: 'Palanquin', sans-serif;
+}
