@@ -11,6 +11,7 @@ import post from './documents/post'
 import project from './documents/project'
 import photograph from './documents/photograph'
 import multimedia from './documents/multimedia'
+import page from './documents/page'
 import siteSettings from './documents/siteSettings'
 
 // Object types
@@ -23,7 +24,7 @@ import authorReference from './objects/authorReference'
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
-  name: 'blog',
+  name: 'aa',
   // Then proceed to concatenate our our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
@@ -31,6 +32,7 @@ export default createSchema({
     // in the studio.
     siteSettings,
     post,
+    page,
     project,
     photograph,
     multimedia,
