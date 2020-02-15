@@ -31,6 +31,8 @@ module.exports = {
         overlayDrafts: !isProd,
         watchMode: !isProd
       }
+    }, {
+      use: 'gridsome-plugin-tailwindcss'
     }
     /* {
       // Create posts from markdown files
