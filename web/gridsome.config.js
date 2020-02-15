@@ -18,7 +18,10 @@ module.exports = {
     'Photographer + Motion graphic designer',
 
   templates: {
-    SanityPost: '/:slug__current'
+    SanityPost: '/:slug__current',
+    SanityProject: '/project/:slug__current',
+    SanityPhotograph: '/photograph/:slug__current',
+    SanityMultimedia: '/multimedia/:slug__current',
   },
 
   plugins: [

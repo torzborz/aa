@@ -3,7 +3,7 @@
 
     <ul>
       <li v-for="edge in $page.posts.edges" :key="edge.node.id">
-        <g-link :to="edge.node.path" v-slot="{ href, route, navigate }">
+        <g-link :to="'/project/' + edge.node.slug.current" v-slot="{ href, route, navigate }">
           <a :href="href" @click="navigate" @mouseover="$emit('changePicture', edge.node)">
             {{ edge.node.title }}
           </a>

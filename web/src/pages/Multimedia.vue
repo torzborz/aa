@@ -5,7 +5,7 @@
 
     <ul>
       <li v-for="edge in $page.posts.edges" :key="edge.node.id">
-        <g-link :to="edge.node.path">
+        <g-link :to="'/multimedia/' + edge.node.slug.current">
           {{ edge.node.title }}
         </g-link>
       </li>

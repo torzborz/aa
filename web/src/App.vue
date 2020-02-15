@@ -57,7 +57,7 @@ export default {
     },
     methods: {
         changePicture(src) {
-            this.src = src.cover;
+            this.src = src.mainImage.asset.url;
         }
     }
 }
