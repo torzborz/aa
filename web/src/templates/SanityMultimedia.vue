@@ -70,7 +70,7 @@ export default {
       meta: [
         {
           name: 'description',
-          content: this.$page.post.description
+          content: this.$page.multimedia.description
         }
       ]
     };
