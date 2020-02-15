@@ -6,3 +6,6 @@
 
 # lerna files
 /lerna-debug.log
+
+# Visual Studio Code files
+*.code-workspace
