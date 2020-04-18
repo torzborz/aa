@@ -66,6 +66,12 @@ export default {
       name: 'body',
       type: 'bodyPortableText',
       title: 'Body'
+    },
+    {
+      name: 'vimeo',
+      type: 'vimeo',
+      title: 'Vimeo',
+      description: 'Vimeo'
     }
   ],
   orderings: [

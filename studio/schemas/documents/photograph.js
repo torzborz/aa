@@ -33,6 +33,16 @@ export default {
       title: 'Main image'
     },
     {
+      name: 'images',
+      title: 'Images',
+      type: 'array',
+      of: [
+        {
+          type: 'image'
+        }
+      ]
+    },
+    {
       name: 'excerpt',
       type: 'excerptPortableText',
       title: 'Excerpt',

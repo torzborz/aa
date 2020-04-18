@@ -31,6 +31,9 @@ export default {
               />
               <figcaption>{node.caption}</figcaption>
             </figure>
+          ),
+          vimeo: ({ node }) => (
+            <pre>{node}</pre>
           )
         }
       }
