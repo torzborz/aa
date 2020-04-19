@@ -1,16 +1,16 @@
 <template id="app">
     <div class="flex">
-        <div class="flex tw" :class="{isHome: 'w-1/2'}">
+        <div class="half" :class="{isHome: 'w-1/2'}">
             <div>
-                <header class="header">
+                <header class="header wrapper">
                     <g-link to="/" class="flex flex-wrap items-center select-none text-xs uppercase">
                         <span class="font-bold">{{ $static.metadata.siteName }}</span>
 
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" class="inline" fill="none" stroke="#707070" stroke-width="0.25" stroke-miterlimit="10">
-                            <path d="M12.2,23.7c-4.2,0-7.7-3.4-7.7-7.7s3.4-7.7,7.7-7.7s7.7,3.4,7.7,7.7v7.7c-4.2,0-7.7-3.4-7.7-7.7c0-4.2,3.4-7.7,7.7-7.7c4.2,0,7.7,3.4,7.7,7.7v7.7"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.5 20.5" width="24" height="16" class="inline mr-2 order-first sm:mx-2 sm:order-none" fill="none" stroke="#707070" stroke-width=".5" stroke-miterlimit="10">
+                            <path d="M10.25,20.25a10,10,0,1,1,10-10v10a10,10,0,1,1,10-10v10"/>
                         </svg>
 
-                        <span>Photographer + Motion graphic designer</span>
+                        <span class="hidden sm:inline">Photographer + Motion graphic designer</span>
                     </g-link>
                 </header>
 
@@ -39,7 +39,7 @@
 
         <!-- <div class="flex"> -->
         <g-image
-            class="fixed flex-1 h-screen inset-y-0 object-center object-cover right-0 tw w-1/2"
+            class="projects__image"
             :src="src"
             :style="{'width': isHome ? '50%' : 0}"
         />
@@ -76,40 +76,66 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .header {
-        @apply px-16 py-4 sticky top-0;
-        background: linear-gradient(178deg, rgba(222, 222, 222, 0.95) 60%, rgba(222, 222, 222, 0) 60.5%);
+  .header {
+    @apply py-4 sticky top-0;
+  }
+
+  .header::before {
+    content: '';
+    display: block;
+    background: rgba(222, 222, 222, .95);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    transform: rotate(-1deg);
+    transform-origin: bottom left;
+  }
+
+  .half {
+    @apply flex;
+    transition: width .4s ease-in-out;
+  }
+
+  .nav {
+    @apply bottom-0 fixed flex justify-around left-0 right-0;
+    background: #fff;
+    z-index: 10;
+
+    .nav__text {
+      display: none;
     }
+  }
+
+  .projects__image {
+    display: none;
+  }
+
+  @media screen and (min-width: 640px) {
     .nav {
-        @apply bottom-0 fixed flex justify-around left-0 right-0;
-        background: #fff;
-        z-index: 10;
+      @apply flex-wrap font-light justify-around left-auto select-none top-0 tracking-wider uppercase;
+      background: #dfdfdf;
+      right: 50%;
+      transition: right .4s ease-in-out;
+      writing-mode: vertical-rl;
 
-        .nav__text {
-          display: none;
-        }
-    }
-    .tw {
-        transition: width .4s ease-in-out;
-    }
-    @media screen and (min-width: 640px) {
-      .nav {
-        @apply flex-wrap font-light justify-around left-auto select-none top-0 tracking-wider uppercase;
-        background: #dfdfdf;
-        right: 50%;
-        transition: right .4s ease-in-out;
-        writing-mode: vertical-rl;
+      .nav__icon {
+        display: none;
+      }
+      .nav__text {
+        display: inline;
+      }
 
-        .nav__icon {
-          display: none;
-        }
-        .nav__text {
-          display: inline;
-        }
-
-        .active--exact, .sub-link.active {
-            @apply font-bold tracking-wide;
-        }
+      .active--exact, .sub-link.active {
+        @apply font-bold tracking-wide;
       }
     }
+
+    .projects__image {
+      @apply block fixed flex-1 h-screen inset-y-0 object-center object-cover right-0 w-1/2;
+      transition: width .4s ease-in-out;
+    }
+  }
 </style>

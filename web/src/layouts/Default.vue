@@ -2,7 +2,7 @@
   <main class="flex">
     <div class="layout flex-auto">
       <transition name="fade" appear>
-        <div class="px-16">
+        <div class="wrapper">
           <slot />
         </div>
       </transition>

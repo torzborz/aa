@@ -3,3 +3,15 @@ body {
     color: #707070;
     font-family: 'Palanquin', sans-serif;
 }
+
+.wrapper {
+  // @apply px-4; // 320px - 16px
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+@media screen and (min-width: 640px) {
+  .wrapper {
+    @apply px-16;
+  }
+}

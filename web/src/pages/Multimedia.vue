@@ -2,7 +2,7 @@
   <Layout>
 
     <!-- <h1>Multimedia</h1> -->
-    <div class="grid grid-cols-2 gap-4">
+    <div class="grid sm:grid-cols-2 gap-4">
       <div v-for="edge in $page.posts.edges" :key="edge.node.id">
         <div v-if="edge.node.vimeo" style="padding:56% 0 0 0;position:relative;">
           <iframe
