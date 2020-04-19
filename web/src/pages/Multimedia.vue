@@ -11,9 +11,11 @@
             style="position:absolute;top:0;left:0;width:100%;height:100%;"
             frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
-        <g-link :to="'/multimedia/' + edge.node.slug.current">
-          {{ edge.node.title }}
-        </g-link>
+        <h2>{{ edge.node.title }}</h2>
+        <p>{{ edge.node._rawBody }}</p>
+        <!-- <g-link :to="'/multimedia/' + edge.node.slug.current"> -->
+          <!-- {{ edge.node.title }} -->
+        <!-- </g-link> -->
       </li>
     </ul>
 
