@@ -28,7 +28,7 @@
         <!-- <div class="flex"> -->
         <g-image
             class="fixed flex-1 h-screen inset-y-0 object-center object-cover right-0 tw w-1/2"
-            :src="src" 
+            :src="src"
             :style="{'width': isHome ? '50%' : 0}"
         />
         <!-- </div> -->
@@ -66,7 +66,7 @@ export default {
 <style lang="scss" scoped>
     .header {
         @apply px-16 py-4 sticky top-0;
-        background: linear-gradient(#dfdfdf, #dfdfdf 75%, hsla(0, 0%, 87%, .85) 87%, hsla(0, 0%, 87%, .75) 99%, #dfdfdf);
+        background: linear-gradient(178deg, rgba(222, 222, 222, 0.95) 60%, rgba(222, 222, 222, 0) 60.5%);
     }
     .nav {
         @apply bottom-0 fixed flex flex-wrap font-light justify-around select-none top-0 tracking-wider uppercase;
