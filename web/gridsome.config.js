@@ -14,8 +14,9 @@ const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
   siteName: 'Barbara Nyíri',
-  siteDescription:
-    'Photographer + Motion graphic designer',
+  siteDescription: 'Photographer + Motion graphic designer',
+
+  icon: './src/assets/images/aa.svg',
 
   templates: {
     SanityPost: '/:slug__current',
