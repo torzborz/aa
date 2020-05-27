@@ -37,12 +37,14 @@
             </nav>
         </div>
 
-        <!-- <div class="flex"> -->
-        <g-image
+        <!-- <div class="flex relative"> -->
+          <g-image
             class="projects__image"
+            :class="{'projects__aa': fit != 'cover'}"
+            :fit="fit"
             :src="src"
             :style="{'width': isHome ? '50%' : 0}"
-        />
+          />
         <!-- </div> -->
     </div>
 </template>
@@ -50,28 +52,46 @@
 <static-query>
 query {
   metadata {
-    siteName
+    siteName,
+    sanityOptions{
+      projectId
+      dataset
+    }
   }
 }
 </static-query>
 
 <script>
+import $urlForImage from './utils/urlForImage'
+import aa from './assets/images/aa.svg'
+
 export default {
-    data() {
-        return {
-            src: 'https://picsum.photos/900',
-        }
-    },
-    computed: {
-        isHome () {
-            return this.$route.name === 'home';
-        }
-    },
-    methods: {
-        changePicture(src) {
-            this.src = src.mainImage.asset.url;
-        }
+  data() {
+    return {
+      src: aa,
     }
+  },
+  computed: {
+    fit() {
+      return this.src === aa ? 'contain' : 'cover'
+    },
+    isHome() {
+      return this.$route.name === 'home'
+    },
+  },
+  methods: {
+    changePicture(src) {
+      if (!!src) {
+        this.src = $urlForImage(src.mainImage.asset, this.$static.metadata.sanityOptions)
+          .size(window.innerWidth, window.innerHeight)
+          .auto('format')
+          .url();
+      } else {
+        console.log(aa);
+        this.src = aa;
+      }
+    }
+  }
 }
 </script>
 
@@ -135,7 +155,11 @@ export default {
 
     .projects__image {
       @apply block fixed flex-1 h-screen inset-y-0 object-center object-cover right-0 w-1/2;
-      transition: width .4s ease-in-out;
+      transition: width .4s ease-in-out, transform .2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .projects__aa {
+      @apply object-contain;
+      transform: scale(.5);
     }
   }
 </style>
