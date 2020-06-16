@@ -2,7 +2,7 @@
   <Layout>
 
     <ul>
-      <li v-for="edge in $page.posts.edges" :key="edge.node.id">
+      <li v-for="edge in $page.posts.edges" :key="edge.node.id" class="text-left md:text-center py-1 md:py-2">
         <g-link :to="'/project/' + edge.node.slug.current" v-slot="{ href, route, navigate }">
           <a :href="href"
             @click="navigate"

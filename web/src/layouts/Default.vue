@@ -1,5 +1,5 @@
 <template>
-  <main class="flex">
+  <main class="flex m-auto">
     <div class="layout flex-auto">
       <transition name="fade" appear>
         <div class="wrapper">

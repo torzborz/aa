@@ -1,7 +1,7 @@
 <template id="app">
-    <div class="flex">
+    <div class="flex min-h-screen">
         <div class="half" :class="{isHome: 'w-1/2'}">
-            <div>
+            <div class="flex flex-col">
                 <header class="header wrapper">
                     <g-link to="/" class="flex flex-wrap items-center select-none text-xs uppercase">
                         <span class="font-bold">{{ $static.metadata.siteName }}</span>
@@ -17,7 +17,7 @@
                 <router-view @changePicture="changePicture" />
             </div>
 
-            <nav class="nav" :style="{'right': isHome ? '50%' : 0}">
+            <nav class="nav" :class="{'half': isHome}">
                 <g-link class="m-4 nav__link" to="/">
                   <svg class="nav__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44" fill="currentColor"><path d="M11.773,7.3a1.753,1.753,0,0,0-1.751,1.752V34.947A1.753,1.753,0,0,0,11.773,36.7H27.41V33.259a2.756,2.756,0,0,1,2.752-2.752h3.816V9.053A1.754,1.754,0,0,0,32.226,7.3Zm17.64,16.041H14.588V22.136H29.41Zm0-4.22H14.588V17.916H29.41Zm0-4.22H14.588V13.7H29.41Z"/><path d="M28.412,33.259V36.04l4.809-4.533H30.164A1.753,1.753,0,0,0,28.412,33.259Z"/></svg>
                   <span class="nav__text">Projects</span>
@@ -63,7 +63,7 @@ query {
 
 <script>
 import $urlForImage from './utils/urlForImage'
-import aa from './assets/images/aa.svg'
+import aa from './assets/images/aa.png'
 
 export default {
   data() {
@@ -87,7 +87,6 @@ export default {
           .auto('format')
           .url();
       } else {
-        console.log(aa);
         this.src = aa;
       }
     }
@@ -133,11 +132,11 @@ export default {
     display: none;
   }
 
-  @media screen and (min-width: 640px) {
+  @media screen and (min-width: 768px) {
     .nav {
       @apply flex-wrap font-light justify-around left-auto select-none top-0 tracking-wider uppercase;
       background: #dfdfdf;
-      right: 50%;
+      // right: 50%;
       transition: right .4s ease-in-out;
       writing-mode: vertical-rl;
 
@@ -150,6 +149,10 @@ export default {
 
       .active--exact, .sub-link.active {
         @apply font-bold tracking-wide;
+      }
+
+      &.half {
+        right: 50%;
       }
     }
 
