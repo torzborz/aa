@@ -5,28 +5,33 @@ export default {
   fields: [
     {
       name: 'name',
-      type: 'string',
-      title: 'Name'
+      title: 'Name',
+      type: 'string'
     },
     {
-      name: 'slug',
-      type: 'slug',
-      title: 'Slug',
       description: 'Some frontends will require a slug to be set to be able to show the person',
+      name: 'slug',
       options: {
-        source: 'name',
-        maxLength: 96
-      }
+        maxLength: 96,
+        source: 'name'
+      },
+      title: 'Slug',
+      type: 'slug'
     },
     {
       name: 'image',
-      type: 'mainImage',
-      title: 'Image'
+      title: 'Image',
+      type: 'mainImage'
     },
     {
       name: 'bio',
-      type: 'bioPortableText',
-      title: 'Biography'
+      title: 'Biography',
+      type: 'bioPortableText'
+    },
+    {
+      name: 'cv',
+      title: 'Curriculum Vitae',
+      type: 'file'
     }
   ],
   preview: {

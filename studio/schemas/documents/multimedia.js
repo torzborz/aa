@@ -1,4 +1,4 @@
-import {format} from 'date-fns'
+// import {format} from 'date-fns'
 
 export default {
   name: 'multimedia',
@@ -110,15 +110,6 @@ export default {
       publishedAt: 'publishedAt',
       slug: 'slug',
       media: 'mainImage'
-    },
-    prepare ({title = 'No title', publishedAt, slug = {}, media}) {
-      const dateSegment = format(publishedAt, 'YYYY/MM')
-      const path = `/${dateSegment}/${slug.current}/`
-      return {
-        title,
-        media,
-        subtitle: publishedAt ? path : 'Missing publishing date'
-      }
     }
   }
 }

@@ -1,7 +1,7 @@
 body {
-    background-color: #dfdfdf;
-    color: #707070;
-    font-family: 'Palanquin', sans-serif;
+  background-color: #dfdfdf;
+  color: theme('colors.gray.707070');
+  font-family: 'Palanquin', sans-serif;
 }
 
 .wrapper {
@@ -14,4 +14,10 @@ body {
   .wrapper {
     @apply px-16;
   }
+}
+
+.caption {
+  @apply text-xs;
+  @apply tracking-widest;
+  @apply uppercase;
 }

@@ -3,11 +3,11 @@
 
     <ul>
       <li v-for="edge in $page.posts.edges" :key="edge.node.id" class="text-left md:text-center py-1 md:py-2">
-        <g-link :to="'/project/' + edge.node.slug.current" v-slot="{ href, route, navigate }">
+        <g-link :to="'/project/' + edge.node.slug.current" v-slot="{ href, navigate }">
           <a :href="href"
             @click="navigate"
-            @mouseover="$emit('changePicture', edge.node)"
-            @mouseout="$emit('changePicture', false)">
+            @mouseover="$emit('change-picture', edge.node)"
+            @mouseout="$emit('change-picture', false)">
             {{ edge.node.title }}
           </a>
         </g-link>
@@ -19,12 +19,12 @@
 
 <page-query>
 {
-  metadata {
-    sanityOptions {
-      projectId
-      dataset
-    }
-  }
+#  metadata {
+#    sanityOptions {
+#      projectId
+#      dataset
+#    }
+#  }
   posts: allSanityProject(sortBy: "publishedAt") {
     edges {
       node {

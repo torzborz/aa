@@ -14,7 +14,7 @@ const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
   siteName: 'Barbara Nyíri',
-  siteDescription: 'Photographer + Motion graphic designer',
+  siteDescription: 'Photographer + Motion graphics designer',
 
   icon: './src/assets/images/aa.svg',
 
