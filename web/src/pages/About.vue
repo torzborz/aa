@@ -1,7 +1,7 @@
 <template>
   <Layout>
-    <div class="sm:flex gap-16">
-      <div>
+    <div class="sm:flex">
+      <div class="sm:mr-16">
         <figure v-if="$static.site.author.image">
           <g-image style="height: 232px; width: 236px;"
             :alt="$static.site.author.image.asset.alt"

@@ -137,7 +137,7 @@ export default {
 
   @media screen and (min-width: 768px) {
     .nav {
-      @apply flex-wrap font-light justify-around left-auto select-none top-0 tracking-wider uppercase;
+      @apply flex-wrap font-light justify-around left-auto select-none top-0 tracking-widest uppercase;
       background: #dfdfdf;
       // right: 50%;
       transition: right .4s ease-in-out;
@@ -151,7 +151,7 @@ export default {
       }
 
       .active--exact, .sub-link.active {
-        @apply font-bold tracking-wide;
+        @apply font-bold;
       }
 
       &.half {
