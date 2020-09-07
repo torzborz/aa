@@ -63,6 +63,46 @@ export default {
       ]
     },
     {
+      name: 'mediums',
+      type: 'array',
+      title: 'Mediums',
+      of: [
+        {
+          type: 'string'
+        }
+      ]
+    },
+    {
+      name: 'year',
+      type: 'date',
+      title: 'Year',
+      options: {
+        dateFormat: 'YYYY',
+        calendarTodayLabel: 'Today'
+      },
+      validation: Rule => Rule.required().custom(val => val < new Date().getFullYear)
+    },
+    {
+      name: 'location',
+      type: 'string',
+      title: 'Location'
+    },
+    {
+      name: 'about',
+      type: 'text',
+      title: 'About'
+    },
+    {
+      name: 'collaboration',
+      type: 'string',
+      title: 'Collaboration with'
+    },
+    {
+      name: 'download',
+      type: 'file',
+      title: 'Download'
+    },
+    {
       name: 'body',
       type: 'bodyPortableText',
       title: 'Body'
