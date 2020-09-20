@@ -14,7 +14,7 @@
         <h2 class="multimedia__title text-2xl font-bold mb-2 mt-10">{{ edge.node.title }}</h2>
 
         <block-content
-          class="multimedia__content mb-4"
+          class="multimedia__content mb-12 mt-2"
           :blocks="edge.node._rawBody"
           v-if="edge.node._rawBody"/>
 
