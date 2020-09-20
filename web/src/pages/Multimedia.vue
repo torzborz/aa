@@ -11,7 +11,7 @@
             frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
 
-        <h2 class="multimedia__title text-2xl font-bold my-2">{{ edge.node.title }}</h2>
+        <h2 class="multimedia__title text-2xl font-bold mb-2 mt10">{{ edge.node.title }}</h2>
 
         <block-content
           class="multimedia__content mb-4"
