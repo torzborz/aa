@@ -5,6 +5,7 @@
       <li v-for="edge in $page.posts.edges" :key="edge.node.id" class="text-left md:text-center py-1 md:py-2">
         <g-link :to="'/project/' + edge.node.slug.current" v-slot="{ href, navigate }">
           <a :href="href"
+            class="hover:font-bold transition-all"
             @click="navigate"
             @mouseover="$emit('change-picture', edge.node)"
             @mouseout="$emit('change-picture', false)">

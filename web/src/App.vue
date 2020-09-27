@@ -98,24 +98,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .header {
-    @apply py-4 sticky top-0;
-  }
-
-  .header::before {
-    content: '';
-    display: block;
-    background: rgba(222, 222, 222, .95);
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-    transform: rotate(-1deg);
-    transform-origin: bottom left;
-  }
-
   .half {
     @apply flex;
     transition: width .4s ease-in-out;

@@ -73,6 +73,21 @@ export default {
       ]
     },
     {
+      name: 'medium',
+      type: 'string',
+      title: 'Medium'
+    },
+    {
+      name: 'year',
+      type: 'string',
+      title: 'Year'
+    },
+    {
+      name: 'location',
+      type: 'string',
+      title: 'Location'
+    },
+    {
       name: 'body',
       type: 'bodyPortableText',
       title: 'Body'

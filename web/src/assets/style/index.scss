@@ -4,6 +4,27 @@ body {
   font-family: 'Palanquin', sans-serif;
 }
 
+.header {
+  @apply py-4;
+  @apply sticky;
+  @apply top-0;
+  @apply z-10;
+}
+
+.header::before {
+  content: '';
+  display: block;
+  background: rgba(222, 222, 222, .95);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  transform: rotate(-1deg);
+  transform-origin: bottom left;
+}
+
 .wrapper {
   // @apply px-4; // 320px - 16px
   padding-left: 5vw;
