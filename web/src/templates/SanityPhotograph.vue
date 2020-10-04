@@ -1,12 +1,16 @@
 <template>
   <Layout>
+    <block-content
+      class="photograph__content"
+      :blocks="$page.photograph._rawBody"
+      v-if="$page.photograph._rawBody"
+    />
 
-      <block-content
-        class="photograph__content"
-        :blocks="$page.photograph._rawBody"
-        v-if="$page.photograph._rawBody"
-      />
-
+    <g-image v-for="image in $page.photograph.images"
+      :key="image.id"
+      :alt="image.alt"
+      :src="$urlForImage(image, $page.metadata.sanityOptions).auto('format').url()"
+    />
   </Layout>
 </template>
 
@@ -20,6 +24,11 @@ query Photograph ($id: ID!) {
   }
   photograph: sanityPhotograph (id: $id) {
     title
+    images {
+      asset {
+        url
+      }
+    }
     publishedAt (format: "D. MMMM YYYY")
     categories {
       id
