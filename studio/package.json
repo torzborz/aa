@@ -13,14 +13,14 @@
     "test": "sanity check"
   },
   "dependencies": {
-    "@sanity/base": "^2.0",
+    "@sanity/base": "^2.0.2",
     "@sanity/cli": "^2.0",
-    "@sanity/components": "^2.0",
+    "@sanity/components": "^2.0.2",
     "@sanity/core": "^2.0",
     "@sanity/dashboard": "^2.0",
-    "@sanity/default-layout": "^2.0",
+    "@sanity/default-layout": "^2.0.2",
     "@sanity/default-login": "^2.0",
-    "@sanity/desk-tool": "^2.0",
+    "@sanity/desk-tool": "^2.0.2",
     "date-fns": "^2.16.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
@@ -31,13 +31,13 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.10.0",
+    "eslint": "^7.11.0",
     "eslint-config-standard": "^14.0.0",
     "eslint-config-standard-react": "^9.2.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.1.1",
-    "eslint-plugin-react": "^7.21.3",
+    "eslint-plugin-react": "^7.21.4",
     "eslint-plugin-standard": "^4.0.1",
     "prettier-eslint-cli": "^5.0.0"
   }
