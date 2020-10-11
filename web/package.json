@@ -15,11 +15,12 @@
     "gridsome-source-sanity": "^1.0.4",
     "hover-effect": "^1.1.0",
     "sanity-blocks-vue-component": "^0.1.0",
-    "tailwindcss": "^1.8.10"
+    "tailwindcss": "^1.8.13",
+    "vue-colcade": "^1.2.4"
   },
   "devDependencies": {
     "gridsome-plugin-tailwindcss": "^3.0.1",
-    "node-sass": "^4.14.1",
-    "sass-loader": "^10.0.2"
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.0"
   }
 }

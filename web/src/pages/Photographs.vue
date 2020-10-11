@@ -2,8 +2,14 @@
   <Layout>
 
     <!-- <h1>Photographs</h1> -->
-    <div class="flex flex-wrap">
-      <div v-for="photo in photos" :key="photo.id" class="photo">
+    <div class="grid-colcade">
+      <!-- columns -->
+      <div class="grid-col grid-col--1"></div>
+      <div class="grid-col grid-col--2"></div>
+      <div class="grid-col grid-col--3"></div>
+      <div class="grid-col grid-col--4"></div>
+
+      <div v-for="photo in photos" :key="photo.id" class="photo grid-item">
         <g-link :to="'/photograph/' + photo.slug" class="photo__link">
           <g-image
             class="photo__img"
@@ -66,6 +72,16 @@ export default {
     }
   },
   mounted() {
+    this.$colcade.create({
+      name: 'photographs',  // name of colcade instance -> will be used as a reference for grid instance
+      el: '.grid-colcade',  // element that hosts the grid -> as mentioned in Colcade config
+      config: {  // native Colcade configuration -> as mentioned in Colcade config
+        columns: '.grid-col',
+        items: '.grid-item',
+      },
+    });
+    window.setInterval(() => this.$colcade.update('photographs'), 1000);
+
     let j = 0;
     for (const edge of this.$page.posts.edges) {
       if (edge.node.images.length > 0) {
@@ -79,6 +95,11 @@ export default {
         this.photos.push(photo);
       }
     }
-  }
+  },
+  beforeDestroy() {
+    console.log('bye');
+  },
+  methods: {
+  },
 }
 </script>

@@ -7,6 +7,8 @@ import DefaultLayout from '~/layouts/Default.vue'
 // Import image url builder
 import urlForImage from './utils/urlForImage'
 
+import VueColcade from 'vue-colcade'
+
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 export default function(Vue, { router, head, isClient }) {
   head.link.push({
@@ -16,6 +18,8 @@ export default function(Vue, { router, head, isClient }) {
 
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
+
+  Vue.use(VueColcade)
 
   // Inject global image URL builder
   Vue.prototype.$urlForImage = urlForImage

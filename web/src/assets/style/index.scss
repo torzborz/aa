@@ -43,35 +43,7 @@ body {
   @apply uppercase;
 }
 
-.photo {
-  @apply p-1;
-  @apply flex;
-  @apply items-center;
-  @apply justify-center;
-
-  width: 50%;
-}
-
-.photo__link {
-  @apply relative;
-}
-
-.photo__img {
-  @apply m-auto;
-}
-
-.photo__txt {
-  @apply absolute;
-  @apply hidden;
-  @apply inset-0;
-  @apply p-5;
-  @apply top-auto;
-
-  background-color: rgba($color: #fff, $alpha: .75);
-}
-.photo__link:hover .photo__txt {
-  @apply block;
-}
+@import 'photographs';
 
 @media (hover: hover) {
 
@@ -80,3 +52,5 @@ body {
 @media (hover: none) {
 
 }
+
+@import 'colcade';

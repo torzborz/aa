@@ -43,11 +43,24 @@ export default {
         ]
       }
     },
-    {name: 'project-users', layout: {height: 'auto'}},
+    {
+      name: 'project-users',
+      layout: {width: 'small'}
+    },
     {
       name: 'document-list',
-      options: {title: 'Recent blog posts', order: '_createdAt desc', types: ['post']},
-      layout: {width: 'medium'}
+      options: {title: 'Recent projects', order: '_createdAt desc', types: ['project']},
+      layout: {width: 'small'}
+    },
+    {
+      name: 'document-list',
+      options: {title: 'Recent photographs', order: '_createdAt desc', types: ['photograph']},
+      layout: {width: 'small'}
+    },
+    {
+      name: 'document-list',
+      options: {title: 'Recent multimedia', order: '_createdAt desc', types: ['multimedia']},
+      layout: {width: 'small'}
     }
   ]
 }
