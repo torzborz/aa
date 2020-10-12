@@ -80,7 +80,7 @@ export default {
         items: '.grid-item',
       },
     });
-    window.setInterval(() => this.$colcade.update('photographs'), 1000);
+    window.setTimeout(() => this.$colcade.update('photographs'), 1000);
 
     let j = 0;
     for (const edge of this.$page.posts.edges) {
@@ -97,7 +97,7 @@ export default {
     }
   },
   beforeDestroy() {
-    console.log('bye');
+    this.$colcade.destroy('photographs');
   },
   methods: {
   },

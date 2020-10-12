@@ -4,13 +4,13 @@
             <div class="flex flex-col">
                 <header class="header wrapper">
                     <g-link to="/" class="flex flex-wrap items-center select-none text-xs uppercase">
-                        <span class="font-bold">{{ $static.site.title }}</span>
+                        <span class="font-bold">{{ $static.site.title || '' }}</span>
 
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.5 20.5" width="24" height="16" class="inline mr-2 order-first sm:mx-2 sm:order-none" fill="none" stroke="#707070" stroke-width=".5" stroke-miterlimit="10">
                             <path d="M10.25,20.25a10,10,0,1,1,10-10v10a10,10,0,1,1,10-10v10"/>
                         </svg>
 
-                        <span class="hidden sm:inline">{{ $static.site.description }}</span>
+                        <span class="hidden sm:inline">{{ $static.site.description || '' }}</span>
                     </g-link>
                 </header>
 
