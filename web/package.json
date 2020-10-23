@@ -7,20 +7,20 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
-    "@gridsome/plugin-google-analytics": "^0.1.0",
-    "@sanity/image-url": "^0.140.19",
-    "@tailwindcss/typography": "^0.2.0",
-    "dotenv": "^8.1.0",
-    "gridsome": "^0.7.21",
-    "gridsome-source-sanity": "^1.0.1",
-    "hover-effect": "^1.1.0",
-    "sanity-blocks-vue-component": "^0.1.0",
-    "tailwindcss": "^1.8.13",
-    "vue-colcade": "^1.2.4"
+    "@gridsome/plugin-google-analytics": "^0.1",
+    "@sanity/image-url": "^0.140",
+    "@tailwindcss/typography": "^0.2",
+    "dotenv": "^8.0",
+    "gridsome": "^0.7",
+    "gridsome-source-sanity": "^1.0",
+    "hover-effect": "^1.0",
+    "sanity-blocks-vue-component": "^0.1",
+    "tailwindcss": "^1.9.5"
   },
   "devDependencies": {
-    "gridsome-plugin-tailwindcss": "^3.0.1",
-    "node-sass": "^4.12.0",
-    "sass-loader": "^8.0.0"
+    "gridsome-plugin-tailwindcss": "^3.0",
+    "node-sass": "^4.0",
+    "sass-loader": "^10.0.4",
+    "vue-masonry-css": "^1.0.3"
   }
 }

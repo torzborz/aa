@@ -1,14 +1,8 @@
 <template>
   <Layout>
-
-    <!-- <h1>Photographs</h1> -->
+<!--
+    <h1>Photographs</h1>
     <div class="grid-colcade">
-      <!-- columns -->
-      <div class="grid-col grid-col--1"></div>
-      <div class="grid-col grid-col--2"></div>
-      <div class="grid-col grid-col--3"></div>
-      <div class="grid-col grid-col--4"></div>
-
       <div v-for="photo in photos" :key="photo.id" class="photo grid-item">
         <g-link :to="'/photograph/' + photo.slug" class="photo__link">
           <g-image
@@ -22,6 +16,39 @@
         </g-link>
       </div>
     </div>
+
+    <vue-masonry-wall :items="photos" :options="{width: 300, padding: 12}" @append="append">
+      <template v-slot:default="{item}">
+        <div class="item">
+          <g-link :to="'/photograph/' + item.slug" class="photo__link">
+            <g-image
+              class="photo__img"
+              :alt="item.alt"
+              :src="$urlForImage(item.image, $static.metadata.sanityOptions).auto('format').url()"
+            />
+            <div class="photo__txt" v-if="item.excerpt">
+              <block-content :blocks="item.excerpt" />
+            </div>
+          </g-link>
+        </div>
+      </template>
+    </vue-masonry-wall>
+-->
+
+<masonry
+  :cols="{default: 3, 700: 2, 400: 1}"
+  :gutter="{default: '20px', 700: '10px'}"
+  >
+  <div v-for="(photo, index) in photos" :key="index">
+    <g-link :to="'/photograph/' + photo.slug" class="photo__link">
+      <g-image
+        class="photo__img"
+        :alt="photo.alt"
+        :src="$urlForImage(photo.image, $static.metadata.sanityOptions).auto('format').url()"
+      />
+    </g-link>
+  </div>
+</masonry>
 
   </Layout>
 </template>
@@ -61,26 +88,26 @@ import BlockContent from '~/components/BlockContent'
 
 export default {
   components: {
-    BlockContent,
+    BlockContent
   },
   metaInfo: {
     title: 'Photographs'
   },
   data() {
     return {
-      photos: []
+      photos: [],
     }
   },
-  mounted() {
-    this.$colcade.create({
-      name: 'photographs',  // name of colcade instance -> will be used as a reference for grid instance
-      el: '.grid-colcade',  // element that hosts the grid -> as mentioned in Colcade config
-      config: {  // native Colcade configuration -> as mentioned in Colcade config
-        columns: '.grid-col',
-        items: '.grid-item',
-      },
-    });
-    window.setTimeout(() => this.$colcade.update('photographs'), 1000);
+  created() {
+    // this.$colcade.create({
+    //   name: 'photographs',  // name of colcade instance -> will be used as a reference for grid instance
+    //   el: '.grid-colcade',  // element that hosts the grid -> as mentioned in Colcade config
+    //   config: {  // native Colcade configuration -> as mentioned in Colcade config
+    //     columns: '.grid-col',
+    //     items: '.grid-item',
+    //   },
+    // });
+    // this.$nextTick(() => this.$colcade.update('photographs'));
 
     let j = 0;
     for (const edge of this.$page.posts.edges) {
@@ -97,9 +124,14 @@ export default {
     }
   },
   beforeDestroy() {
-    this.$colcade.destroy('photographs');
+    // this.$colcade.destroy('photographs');
   },
   methods: {
+    append() {
+      // for (let i = 0; i < 20; i++) {
+        // this.items.push({title: `Item ${this.items.length}`, content: 'Content'})
+      // }
+    }
   },
 }
 </script>
