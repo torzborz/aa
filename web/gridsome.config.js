@@ -30,9 +30,9 @@ module.exports = {
       use: 'gridsome-source-sanity',
       options: {
         ...clientConfig.sanity,
-        typeName: 'Sanity',
-        token: process.env.SANITY_TOKEN,
         overlayDrafts: !isProd,
+        token: process.env.SANITY_TOKEN,
+        typeName: 'Sanity',
         watchMode: !isProd
       }
     }, {

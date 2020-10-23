@@ -37,7 +37,7 @@
 
 <masonry
   :cols="{default: 3, 700: 2, 400: 1}"
-  :gutter="{default: '20px', 700: '10px'}"
+  :gutter="{default: '1rem'}"
   >
   <div v-for="(photo, index) in photos" :key="index">
     <g-link :to="'/photograph/' + photo.slug" class="photo__link">
