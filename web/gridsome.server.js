@@ -7,6 +7,11 @@
 const clientConfig = require('./client-config')
 
 module.exports = function(api) {
+  // sanity 2.0 compatibility fix
+  api.createSchema(({ addSchemaTypes }) => { addSchemaTypes(`
+    type SanityDocument implements Node @infer { id: ID! }
+  `)})
+
   api.loadSource(store => {
     // Use the Data store API here: https://gridsome.org/docs/data-store-api
     store.addMetadata('sanityOptions', clientConfig.sanity)

@@ -15,7 +15,7 @@
     "gridsome-source-sanity": "^1.0",
     "hover-effect": "^1.0",
     "sanity-blocks-vue-component": "^0.1",
-    "tailwindcss": "^1.9.5"
+    "tailwindcss": "^1.9.6"
   },
   "devDependencies": {
     "gridsome-plugin-tailwindcss": "^3.0",
