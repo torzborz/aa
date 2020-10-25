@@ -62,15 +62,9 @@ query Photograph ($id: ID!) {
 
 <script>
 import BlockContent from '~/components/BlockContent'
-import PostMeta from '~/components/PostMeta'
-import PostTags from '~/components/PostTags'
-import AuthorCard from '~/components/AuthorCard'
 
 export default {
   components: {
-    AuthorCard,
-    PostMeta,
-    PostTags,
     BlockContent
   },
   metaInfo() {

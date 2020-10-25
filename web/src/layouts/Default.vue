@@ -12,11 +12,11 @@
 
 <style>
 .fade-enter-active {
-  transition: filter .25s, opacity .25s;
+  transition: filter 0.25s, opacity 0.25s;
 }
 
 .fade-enter {
-  filter: blur(.5rem);
+  filter: blur(0.5rem);
   opacity: 0;
 }
 </style>

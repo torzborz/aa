@@ -1,0 +1,80 @@
+.half {
+  @apply flex;
+
+  transition: width 0.4s ease-in-out;
+}
+
+.nav {
+  @apply bottom-0;
+  @apply fixed;
+  @apply flex;
+  @apply justify-around;
+  @apply left-0;
+  @apply right-0;
+
+  background: #fff;
+  z-index: 10;
+
+  .nav__text {
+    display: none;
+  }
+}
+
+.projects__image {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .nav {
+    @apply flex-wrap;
+    @apply font-light;
+    @apply justify-around;
+    @apply left-auto;
+    @apply select-none;
+    @apply top-0;
+    @apply tracking-widest;
+    @apply uppercase;
+
+    background: #dfdfdf;
+    // right: 50%;
+    transition: right 0.4s ease-in-out;
+    writing-mode: vertical-rl;
+
+    .nav__icon {
+      display: none;
+    }
+
+    .nav__text {
+      display: inline;
+    }
+
+    .active--exact,
+    .sub-link.active {
+      @apply font-bold;
+    }
+
+    &.half {
+      right: 50%;
+    }
+  }
+
+  .projects__image {
+    @apply block;
+    @apply fixed;
+    @apply flex-1;
+    @apply h-screen;
+    @apply inset-y-0;
+    @apply object-center;
+    @apply object-cover;
+    @apply right-0;
+    @apply w-1/2;
+
+    transition: width 0.4s ease-in-out, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .projects__aa {
+    @apply object-contain;
+
+    transform: scale(0.5);
+  }
+}

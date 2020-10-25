@@ -21,6 +21,8 @@
     "gridsome-plugin-tailwindcss": "^3.0",
     "node-sass": "^4.0",
     "sass-loader": "^10.0.4",
+    "stylelint": "^13.7.2",
+    "stylelint-config-standard": "^20.0.0",
     "vue-masonry-css": "^1.0.3"
   }
 }

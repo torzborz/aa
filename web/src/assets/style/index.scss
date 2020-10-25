@@ -43,7 +43,7 @@ body {
   @apply uppercase;
 }
 
-@import 'photographs';
+@import 'main', 'photographs';
 
 @media (hover: hover) {
 
@@ -52,5 +52,3 @@ body {
 @media (hover: none) {
 
 }
-
-@import 'colcade';

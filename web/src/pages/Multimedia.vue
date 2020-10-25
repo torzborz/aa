@@ -4,10 +4,10 @@
     <!-- <h1>Multimedia</h1> -->
     <div class="grid sm:grid-cols-2 gap-4">
       <div v-for="edge in $page.posts.edges" :key="edge.node.id">
-        <div v-if="edge.node.vimeo" style="padding:56% 0 0 0;position:relative;">
+        <div v-if="edge.node.vimeo" style="padding: 56% 0 0 0; position: relative;">
           <iframe
             :src="'https://player.vimeo.com/video' + getId(edge.node.vimeo.url) + '?color=ffffff&title=0&byline=0'"
-            style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1;"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"
             frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
 
