@@ -32,6 +32,11 @@ export default {
       name: 'cv',
       title: 'Curriculum Vitae',
       type: 'file'
+    },
+    {
+      name: 'social',
+      title: 'Social',
+      type: 'bioPortableText'
     }
   ],
   preview: {

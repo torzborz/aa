@@ -1,10 +1,34 @@
 <template>
   <Layout>
-    <block-content
-      class="photograph__content"
-      :blocks="$page.photograph._rawBody"
-      v-if="$page.photograph._rawBody"
-    />
+    <div class="flex">
+      <div>
+        <h3>Project Name</h3>
+        <h1>{{ $page.photograph.title }}</h1>
+
+        <h3>Medium</h3>
+        <p>{{ $page.photograph.medium }}</p>
+
+        <div class="flex">
+          <div>
+            <h3>Year</h3>
+            <p>{{ $page.photograph.year }}</p>
+          </div>
+
+          <div>
+            <h3>Location</h3>
+            <p>{{ $page.photograph.location }}</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3>About</h3>
+        <block-content
+          class="photograph__content"
+          :blocks="$page.photograph._rawBody"
+          v-if="$page.photograph._rawBody"
+        />
+      </div>
+    </div>
 
     <g-image v-for="image in $page.photograph.images"
       :key="image.id"
@@ -23,7 +47,7 @@ query Photograph ($id: ID!) {
     }
   }
   photograph: sanityPhotograph (id: $id) {
-    title
+    title medium year location
     images {
       asset {
         url
