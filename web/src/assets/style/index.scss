@@ -14,7 +14,7 @@ body {
 .header::before {
   content: '';
   display: block;
-  background: rgba(222, 222, 222, .95);
+  background: rgba(222, 222, 222, 0.95);
   position: absolute;
   left: 0;
   right: 0;
@@ -46,9 +46,9 @@ body {
 @import 'main', 'photographs';
 
 @media (hover: hover) {
-
+  // width: auto;
 }
 
 @media (hover: none) {
-
+  // width: auto;
 }

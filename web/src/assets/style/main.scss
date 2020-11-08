@@ -1,4 +1,4 @@
-.half {
+.home {
   @apply flex;
 
   transition: width 0.4s ease-in-out;
@@ -8,11 +8,11 @@
   @apply bottom-0;
   @apply fixed;
   @apply flex;
-  @apply justify-around;
+  @apply justify-evenly;
   @apply left-0;
   @apply right-0;
 
-  background: #fff;
+  background-color: #fff;
   z-index: 10;
 
   .nav__text {
@@ -28,16 +28,16 @@
   .nav {
     @apply flex-wrap;
     @apply font-light;
-    @apply justify-around;
+    @apply justify-evenly;
     @apply left-auto;
     @apply select-none;
     @apply top-0;
     @apply tracking-widest;
     @apply uppercase;
 
-    background: #dfdfdf;
+    background-color: #dfdfdf;
     // right: 50%;
-    transition: right 0.4s ease-in-out;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, right 0.4s ease-in-out;
     writing-mode: vertical-rl;
 
     .nav__icon {
@@ -53,8 +53,30 @@
       @apply font-bold;
     }
 
-    &.half {
+    &.home {
       right: 50%;
+    }
+
+    &.project,
+    &.projects {
+      background-color: #fff;
+      color: rgba(112, 112, 112, 0.9);
+    }
+
+    &.photograph,
+    &.photographs {
+      background-color: #707070;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    &.multimedia {
+      background-color: #2d2d2d;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    &.about {
+      background-color: #000;
+      color: rgba(255, 255, 255, 0.9);
     }
   }
 
