@@ -47,10 +47,10 @@
         :src="$urlForImage(photo.image, $static.metadata.sanityOptions).auto('format').url()"
       />
     </g-link>
-    <div class="absolute top-0 left-0 right-0 p-2">
-      <h3>{{ photo.alt }}</h3>
-      <block-content :blocks="photo.excerpt" />
-    </div>
+    <!-- <div class="absolute top-0 left-0 right-0 p-2"> -->
+      <!-- <h3>{{ photo.alt }}</h3> -->
+      <!-- <block-content :blocks="photo.excerpt" /> -->
+    <!-- </div> -->
   </div>
 </masonry>
 
