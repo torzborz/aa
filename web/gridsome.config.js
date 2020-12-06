@@ -20,9 +20,24 @@ module.exports = {
 
   templates: {
     SanityPost: '/:slug__current',
-    SanityProject: '/project/:slug__current',
-    SanityPhotograph: '/photograph/:slug__current',
-    SanityMultimedia: '/multimedia/:slug__current',
+    SanityProject: [
+      {
+        name: 'project',
+        path: '/project/:slug__current'
+      }
+    ],
+    SanityPhotograph: [
+      {
+        name: 'photograph',
+        path: '/photograph/:slug__current'
+      }
+    ],
+    SanityMultimedia: [
+      {
+        name: 'multimedia',
+        path: '/multimedia/:slug__current'
+      }
+    ],
   },
 
   plugins: [
