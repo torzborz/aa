@@ -4,11 +4,13 @@ body {
   font-family: 'Palanquin', sans-serif;
 }
 
+.app {
+  @apply flex min-h-screen;
+  @apply flex-col;
+}
+
 .header {
-  @apply py-4;
-  @apply sticky;
-  @apply top-0;
-  @apply z-10;
+  @apply py-4 sticky top-0 z-10;
 }
 
 .header::before {
@@ -32,6 +34,10 @@ body {
 }
 
 @media screen and (min-width: 640px) {
+  .app {
+    @apply flex-row;
+  }
+
   .wrapper {
     @apply px-16;
   }
@@ -41,6 +47,15 @@ body {
   @apply text-xs;
   @apply tracking-widest;
   @apply uppercase;
+}
+
+.fade-enter-active {
+  transition: filter 0.25s, opacity 0.25s;
+}
+
+.fade-enter {
+  filter: blur(0.5rem);
+  opacity: 0;
 }
 
 @import 'main', 'photographs';

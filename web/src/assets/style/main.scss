@@ -1,12 +1,10 @@
 .home {
   @apply flex;
-
-  transition: width 0.4s ease-in-out;
 }
 
 .nav {
   @apply bottom-0;
-  @apply fixed;
+  @apply sticky;
   @apply flex;
   @apply justify-evenly;
   @apply left-0;
@@ -28,6 +26,7 @@
   .nav {
     @apply flex-wrap;
     @apply font-light;
+    @apply h-screen;
     @apply justify-evenly;
     @apply left-auto;
     @apply select-none;
@@ -37,7 +36,7 @@
 
     background-color: #dfdfdf;
     // right: 50%;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, right 0.4s ease-in-out;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
     writing-mode: vertical-rl;
 
     .nav__icon {
@@ -53,9 +52,9 @@
       @apply font-bold;
     }
 
-    &.home {
-      right: 50%;
-    }
+    // &.home {
+    //   right: 50%;
+    // }
 
     &.project,
     &.projects {
@@ -82,16 +81,16 @@
 
   .projects__image {
     @apply block;
-    @apply fixed;
     @apply flex-1;
     @apply h-screen;
     @apply inset-y-0;
     @apply object-center;
     @apply object-cover;
     @apply right-0;
+    @apply sticky;
     @apply w-1/2;
 
-    transition: width 0.4s ease-in-out, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .projects__aa {

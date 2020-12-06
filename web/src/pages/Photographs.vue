@@ -39,7 +39,7 @@
   :cols="{default: 3, 700: 2, 400: 1}"
   :gutter="{default: '1rem'}"
   >
-  <div v-for="(photo, index) in photos" :key="index">
+  <div v-for="(photo, index) in photos" :key="index" class="relative">
     <g-link :to="'/photograph/' + photo.slug" class="photo__link">
       <g-image
         class="photo__img"
@@ -47,6 +47,10 @@
         :src="$urlForImage(photo.image, $static.metadata.sanityOptions).auto('format').url()"
       />
     </g-link>
+    <div class="absolute top-0 left-0 right-0 p-2">
+      <h3>{{ photo.alt }}</h3>
+      <block-content :blocks="photo.excerpt" />
+    </div>
   </div>
 </masonry>
 
