@@ -46,11 +46,11 @@
         :alt="photo.alt"
         :src="$urlForImage(photo.image, $static.metadata.sanityOptions).auto('format').url()"
       />
+      <div class="photo__txt">
+        <h3>{{ photo.alt }}</h3>
+        <block-content :blocks="photo.excerpt" />
+      </div>
     </g-link>
-    <div class="absolute bottom-0 left-0 right-0 p-2">
-      <h3>{{ photo.alt }}</h3>
-      <!-- <block-content :blocks="photo.excerpt" /> -->
-    </div>
   </div>
 </masonry>
 
@@ -122,7 +122,7 @@ export default {
         photo.slug = edge.node.slug.current;
         photo.alt = edge.node.title;
         photo.image = edge.node.images[i];
-        photo.excerpt = edge.node._rawExcerpt;
+        photo.excerpt = {...edge.node._rawExcerpt};
         this.photos.push(photo);
       }
     }
