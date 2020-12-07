@@ -48,7 +48,7 @@
       />
       <div class="photo__txt">
         <h3>{{ photo.alt }}</h3>
-        <block-content :blocks="photo.excerpt" />
+        <!-- <block-content :blocks="photo.excerpt" /> -->
       </div>
     </g-link>
   </div>
@@ -122,7 +122,7 @@ export default {
         photo.slug = edge.node.slug.current;
         photo.alt = edge.node.title;
         photo.image = edge.node.images[i];
-        photo.excerpt = {...edge.node._rawExcerpt};
+        photo.excerpt = edge.node._rawExcerpt;
         this.photos.push(photo);
       }
     }
