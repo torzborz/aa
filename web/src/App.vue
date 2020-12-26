@@ -1,6 +1,6 @@
 <template id="app">
     <div class="app">
-        <div class="flex flex-1 flex-col min-h-screen">
+        <div class="main">
             <header class="header wrapper">
                 <g-link to="/" class="flex flex-wrap items-center select-none text-xs uppercase">
                     <span class="font-bold">{{ $static.site.title || '' }}</span>
@@ -35,7 +35,7 @@
             </g-link>
         </nav>
 
-        <div class="flex relative" :class="{'flex-1': isHome, 'flex-0': !isHome}">
+        <div class="slider" :class="{'off': !isHome}">
             <g-image
               class="projects__image"
               :class="{'projects__aa': fit != 'cover'}"

@@ -8,7 +8,7 @@
             class="hover:font-bold transition-all"
             @click="navigate"
             @mouseover="$emit('change-picture', edge.node)"
-            @mouseout="$emit('change-picture', false)">
+            mouseout="$emit('change-picture', false)">
             {{ edge.node.title }}
           </a>
         </g-link>

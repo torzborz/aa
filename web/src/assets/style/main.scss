@@ -18,6 +18,26 @@
   }
 }
 
+.main {
+  @apply flex flex-1 flex-col min-h-screen;
+
+  flex-basis: 100%;
+}
+
+.slider {
+  @apply flex relative visible;
+
+  flex-basis: 100%;
+  transition: flex-basis 0.15s ease-out, visibility 0s linear 0s;
+}
+
+.slider.off {
+  @apply invisible;
+
+  flex-basis: 0%;
+  transition: flex-basis 0.15s ease-out, visibility 0s linear 0.15s;
+}
+
 .projects__image {
   display: none;
 }
