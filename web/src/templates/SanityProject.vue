@@ -7,7 +7,7 @@
         <dd class="font-black mb-4 ml-7 text-4xl">{{ $page.project.title }}</dd>
 
         <dt class="text-xs uppercase">medium</dt>
-        <dd class="mb-4 ml-7" v-for="medium in $page.project.mediums">{{ medium }}</dd>
+        <dd class="mb-4 ml-7" v-for="medium in $page.project.mediums" :key="medium">{{ medium }}</dd>
 
         <div class="flex">
           <div class="w-1/2">

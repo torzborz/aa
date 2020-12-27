@@ -1,26 +1,27 @@
 <template>
   <Layout>
     <div class="flex">
-      <div>
-        <h3>Project Name</h3>
-        <h1>{{ $page.photograph.title }}</h1>
+      <dl class="w-1/3">
+        <dt class="text-xs uppercase">project name</dt>
+        <dd class="font-black mb-4 ml-7 text-4xl">{{ $page.photograph.title }}</dd>
 
-        <h3>Medium</h3>
-        <p>{{ $page.photograph.medium }}</p>
+        <dt class="text-xs uppercase">medium</dt>
+        <dd class="mb-4 ml-7">{{ $page.photograph.medium }}</dd>
 
         <div class="flex">
-          <div>
-            <h3>Year</h3>
-            <p>{{ $page.photograph.year }}</p>
+          <div class="w-1/2">
+            <dt class="text-xs uppercase">year</dt>
+            <dd class="mb-4 ml-7">{{ $page.photograph.year }}</dd>
           </div>
 
-          <div>
-            <h3>Location</h3>
-            <p>{{ $page.photograph.location }}</p>
+          <div class="w-1/2">
+            <dt class="text-xs uppercase">location</dt>
+            <dd class="mb-4 ml-7">{{ $page.photograph.location }}</dd>
           </div>
         </div>
-      </div>
-      <div>
+      </dl>
+
+      <div class="w-2/3">
         <h3>About</h3>
         <block-content
           class="photograph__content"
@@ -53,33 +54,7 @@ query Photograph ($id: ID!) {
         url
       }
     }
-    publishedAt (format: "D. MMMM YYYY")
-    categories {
-      id
-      title
-    }
-    _rawExcerpt
     _rawBody
-    mainImage {
-      asset {
-        _id
-        url
-      }
-      caption
-      alt
-      hotspot {
-        x
-        y
-        height
-        width
-      }
-      crop {
-        top
-        bottom
-        left
-        right
-      }
-    }
   }
 }
 </page-query>
