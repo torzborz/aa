@@ -52,7 +52,12 @@ query Project ($id: ID!) {
     }
   }
   project: sanityProject (id: $id) {
-    title, mediums, year, location, about, collaboration
+    title
+    mediums
+    year (format: "Y")
+    location
+    about
+    collaboration
     download {
       asset {
         source {
@@ -60,33 +65,7 @@ query Project ($id: ID!) {
         }
       }
     }
-    publishedAt (format: "D. MMMM YYYY")
-    categories {
-      id
-      title
-    }
-    _rawExcerpt
     _rawBody
-    mainImage {
-      asset {
-        _id
-        url
-      }
-      caption
-      alt
-      hotspot {
-        x
-        y
-        height
-        width
-      }
-      crop {
-        top
-        bottom
-        left
-        right
-      }
-    }
   }
 }
 </page-query>
