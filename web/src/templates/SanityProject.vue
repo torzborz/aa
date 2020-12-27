@@ -2,35 +2,35 @@
   <Layout>
 
     <div class="flex">
-      <dl class="w-1/2">
+      <dl class="w-1/3">
         <dt class="text-xs uppercase">project name</dt>
-        <dd>{{ $page.project.title }}</dd>
+        <dd class="font-black mb-4 ml-7 text-4xl">{{ $page.project.title }}</dd>
 
         <dt class="text-xs uppercase">medium</dt>
-        <dd>{{ $page.project.mediums }}</dd>
+        <dd class="mb-4 ml-7" v-for="medium in $page.project.mediums">{{ medium }}</dd>
 
         <div class="flex">
           <div class="w-1/2">
             <dt class="text-xs uppercase">year</dt>
-            <dd>{{ $page.project.year }}</dd>
+            <dd class="mb-4 ml-7">{{ $page.project.year }}</dd>
           </div>
 
           <div class="w-1/2">
             <dt class="text-xs uppercase">location</dt>
-            <dd>{{ $page.project.location }}</dd>
+            <dd class="mb-4 ml-7">{{ $page.project.location }}</dd>
           </div>
         </div>
       </dl>
 
-      <dl class="w-1/2">
+      <dl class="w-2/3">
         <dt class="text-xs uppercase">about</dt>
-        <dd>{{ $page.project.about }}</dd>
+        <dd class="mb-4 ml-7">{{ $page.project.about }}</dd>
 
-        <dt v-if="$page.project.location" class="text-xs uppercase">collaboration with</dt>
-        <dd v-if="$page.project.location">{{ $page.project.location }}</dd>
+        <dt v-if="$page.project.collaboration" class="text-xs uppercase">collaboration with</dt>
+        <dd class="mb-4 ml-7" v-if="$page.project.collaboration">{{ $page.project.collaboration }}</dd>
 
         <dt v-if="$page.project.download" class="text-xs uppercase">download</dt>
-        <dd v-if="$page.project.download">{{ $page.project.download }}</dd>
+        <dd class="mb-4 ml-7" v-if="$page.project.download">{{ $page.project.download }}</dd>
       </dl>
     </div>
 
@@ -52,7 +52,14 @@ query Project ($id: ID!) {
     }
   }
   project: sanityProject (id: $id) {
-    title
+    title, mediums, year, location, about, collaboration
+    download {
+      asset {
+        source {
+          url
+        }
+      }
+    }
     publishedAt (format: "D. MMMM YYYY")
     categories {
       id
