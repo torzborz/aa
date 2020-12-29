@@ -73,9 +73,9 @@ export default {
       ]
     },
     {
-      name: 'medium',
+      name: 'media',
       type: 'string',
-      title: 'Medium'
+      title: 'Media'
     },
     {
       name: 'year',

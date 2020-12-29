@@ -17,7 +17,7 @@
     "hover-effect": "^1.0",
     "postcss": "^7.0.35",
     "sanity-blocks-vue-component": "^0.1",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.1"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2"
   },
   "devDependencies": {
     "eslint-plugin-gridsome": "^1.5",

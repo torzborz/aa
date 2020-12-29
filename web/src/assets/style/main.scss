@@ -27,15 +27,15 @@
 .slider {
   @apply flex relative visible;
 
-  flex-basis: 100%;
-  transition: flex-basis 0.15s ease-out, visibility 0s linear 0s;
+  flex-basis: 100%; // flex-basis transition doesn't work in safari, works only with all
+  transition: all var(--transition-speed) ease-out, visibility 0s linear 0s;
 }
 
 .slider.off {
   @apply invisible;
 
   flex-basis: 0%;
-  transition: flex-basis 0.15s ease-out, visibility 0s linear 0.15s;
+  transition: all var(--transition-speed) ease-out, visibility 0s linear var(--transition-speed);
 }
 
 .projects__image {

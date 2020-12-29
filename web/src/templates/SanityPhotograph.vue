@@ -6,7 +6,7 @@
         <dd class="font-black mb-4 ml-7 text-4xl">{{ $page.photograph.title }}</dd>
 
         <dt class="text-xs uppercase">medium</dt>
-        <dd class="mb-4 ml-7">{{ $page.photograph.medium }}</dd>
+        <dd class="mb-4 ml-7">{{ $page.photograph.media }}</dd>
 
         <div class="flex">
           <div class="w-1/2">
@@ -48,7 +48,7 @@ query Photograph ($id: ID!) {
     }
   }
   photograph: sanityPhotograph (id: $id) {
-    title medium year location
+    title media year location
     images {
       asset {
         url

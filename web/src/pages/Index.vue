@@ -34,10 +34,6 @@
         slug {
           current
         }
-        categories {
-          id
-          title
-        }
         publishedAt(format: "D. MMMM YYYY")
         _rawExcerpt
         mainImage {

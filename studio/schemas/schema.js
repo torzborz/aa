@@ -39,11 +39,12 @@ export default createSchema({
     multimedia,
     category,
     author,
-    mainImage,
+
     authorReference,
-    bodyPortableText,
     bioPortableText,
+    bodyPortableText,
     excerptPortableText,
+    mainImage,
     vimeo
 
     // When added to this list, object types can be used as

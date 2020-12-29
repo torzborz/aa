@@ -20,11 +20,6 @@ query Multimedia ($id: ID!) {
   }
   multimedia: sanityMultimedia (id: $id) {
     title
-    publishedAt (format: "D. MMMM YYYY")
-    categories {
-      id
-      title
-    }
     _rawExcerpt
     _rawBody
     mainImage {

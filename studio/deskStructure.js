@@ -25,6 +25,11 @@ export default () =>
         .icon(FiUsers)
         .schemaType('author')
         .child(S.documentTypeList('author').title('Authors')),
+      // S.listItem()
+      //   .title('Media')
+      //   .icon(FiPackage)
+      //   .schemaType('medium')
+      //   .child(S.documentTypeList('medium').title('Media')),
       S.listItem()
         .title('Categories')
         .icon(FiHash)

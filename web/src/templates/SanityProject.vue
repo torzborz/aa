@@ -6,8 +6,10 @@
         <dt class="text-xs uppercase">project name</dt>
         <dd class="font-black mb-4 ml-7 text-4xl">{{ $page.project.title }}</dd>
 
-        <dt class="text-xs uppercase">medium</dt>
-        <dd class="mb-4 ml-7" v-for="medium in $page.project.mediums" :key="medium">{{ medium }}</dd>
+        <div v-if="$page.project.media">
+          <dt class="text-xs uppercase">medium</dt>
+          <dd class="mb-4 ml-7" v-for="medium in $page.project.media" :key="medium">{{ medium }}</dd>
+        </div>
 
         <div class="flex">
           <div class="w-1/2">
@@ -53,7 +55,7 @@ query Project ($id: ID!) {
   }
   project: sanityProject (id: $id) {
     title
-    mediums
+    media
     year (format: "Y")
     location
     about

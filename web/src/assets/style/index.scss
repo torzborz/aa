@@ -1,3 +1,7 @@
+:root {
+  --transition-speed: 0.15s;
+}
+
 body {
   background-color: #dfdfdf;
   color: theme('colors.gray.707070');
@@ -50,7 +54,7 @@ body {
 }
 
 .fade-enter-active {
-  transition: filter 0.25s linear 0.15s, opacity 0.25s linear 0.15s, visibility 0s linear 0.15s;
+  transition: filter var(--transition-speed) linear var(--transition-speed), opacity var(--transition-speed) linear var(--transition-speed), visibility 0s linear var(--transition-speed);
 }
 
 .fade-enter {
