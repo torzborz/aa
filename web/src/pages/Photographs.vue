@@ -33,7 +33,6 @@
         </div>
       </template>
     </vue-masonry-wall>
--->
 
 <masonry
   :cols="{default: 3, 700: 2, 400: 1}"
@@ -48,12 +47,31 @@
       />
       <div class="photo__txt">
         <h3>{{ photo.alt }}</h3>
-        <!-- <block-content :blocks="photo.excerpt" /> -->
+        <! -- <block-content :blocks="photo.excerpt" /> -- >
       </div>
     </g-link>
   </div>
 </masonry>
-
+-->
+    <div style="margin: 0 -6px">
+      <magic-grid
+        wrapper="masonry"
+        :gap="12"
+        :maxColWidth="354"
+      >
+        <g-link :to="'/photograph/' + photo.slug" class="photo__link" v-for="(photo, index) in photos" :key="index">
+                <g-image
+            class="photo__img"
+            :alt="photo.alt"
+            :src="$urlForImage(photo.image, $static.metadata.sanityOptions).auto('format').url()"
+          />
+          <div class="photo__txt">
+            <h3>{{ photo.alt }}</h3>
+            <!-- <block-content :blocks="photo.excerpt" /> -->
+          </div>
+        </g-link>
+      </magic-grid>
+    </div>
   </Layout>
 </template>
 <static-query>

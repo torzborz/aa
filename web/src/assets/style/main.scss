@@ -19,7 +19,7 @@
 }
 
 .main {
-  @apply flex flex-1 flex-col min-h-screen;
+  @apply flex flex-1 flex-col min-h-full;
 
   flex-basis: 100%;
 }
