@@ -25,9 +25,10 @@
     "gridsome-helper-json": "^1.0",
     "gridsome-plugin-tailwindcss": "^4.1",
     "sass": "^1.32",
-    "sass-loader": "^11.0",
-    "stylelint": "^13.11",
+    "sass-loader": "^10.0",
+    "stylelint": "^13.0",
     "stylelint-config-standard": "^20.0",
-    "vue-masonry-css": "^1.0"
+    "vue-masonry-css": "^1.0",
+    "webpack": "^4.0"
   }
 }
