@@ -13,6 +13,10 @@
   background-color: #fff;
   z-index: 10;
 
+  .nav__link {
+    writing-mode: vertical-lr;
+  }
+
   .nav__text {
     display: none;
   }
@@ -42,8 +46,9 @@
   display: none;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 640px) {
   .nav {
+    @apply flex-col;
     @apply flex-wrap;
     @apply font-light;
     @apply h-screen;
@@ -57,7 +62,7 @@
     background-color: #dfdfdf;
     // right: 50%;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-    writing-mode: vertical-rl;
+    // writing-mode: vertical-rl;
 
     .nav__icon {
       display: none;

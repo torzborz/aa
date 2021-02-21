@@ -1,30 +1,30 @@
 <template>
   <Layout>
 
-    <div class="flex">
-      <dl class="w-1/3">
+    <div class="flex w-auto">
+      <dl class="w-1/2 sm:w-1/3">
         <dt class="text-xs uppercase">project name</dt>
-        <dd class="font-black mb-4 ml-7 text-4xl">{{ $page.project.title }}</dd>
+        <dd class="font-black mb-4 ml-7 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">{{ $page.project.title }}</dd>
 
         <div v-if="$page.project.media">
           <dt class="text-xs uppercase">medium</dt>
           <dd class="mb-4 ml-7" v-for="medium in $page.project.media" :key="medium">{{ medium }}</dd>
         </div>
 
-        <div class="flex">
-          <div class="w-1/2">
+        <div class="sm:flex">
+          <div class="sm:w-1/2">
             <dt class="text-xs uppercase">year</dt>
             <dd class="mb-4 ml-7">{{ $page.project.year }}</dd>
           </div>
 
-          <div class="w-1/2">
+          <div class="sm:w-1/2">
             <dt class="text-xs uppercase">location</dt>
             <dd class="mb-4 ml-7">{{ $page.project.location }}</dd>
           </div>
         </div>
       </dl>
 
-      <dl class="w-2/3">
+      <dl class="w-1/2 sm:w-2/3">
         <dt class="text-xs uppercase">about</dt>
         <dd class="mb-4 ml-7">{{ $page.project.about }}</dd>
 
