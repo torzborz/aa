@@ -14,7 +14,6 @@
     "dotenv": "^8.2",
     "gridsome": "^0.7.23",
     "gridsome-source-sanity": "^1.0",
-    "hover-effect": "^1.1",
     "postcss": "^7.0.35",
     "sanity-blocks-vue-component": "^0.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3",
